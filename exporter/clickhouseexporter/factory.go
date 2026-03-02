@@ -38,7 +38,7 @@ func createLogsExporter(
 	c.collectorVersion = set.BuildInfo.Version
 
 	var exp anyLogsExporter
-	if featureGateJSON.IsEnabled() {
+	if featureGateJSON.IsEnabled() || c.UseJSON {
 		exp = newLogsJSONExporter(set.Logger, c)
 	} else {
 		exp = newLogsExporter(set.Logger, c)
@@ -66,7 +66,7 @@ func createTracesExporter(
 	c.collectorVersion = set.BuildInfo.Version
 
 	var exp anyTracesExporter
-	if featureGateJSON.IsEnabled() {
+	if featureGateJSON.IsEnabled() || c.UseJSON {
 		exp = newTracesJSONExporter(set.Logger, c)
 	} else {
 		exp = newTracesExporter(set.Logger, c)
