@@ -144,4 +144,3 @@ func testTracesCombinedExporter(t *testing.T, endpoint string) {
 		require.Equal(t, `{"service":{"name":"v"}}`, actual.SpanAttributes)
 	}
 }
-
