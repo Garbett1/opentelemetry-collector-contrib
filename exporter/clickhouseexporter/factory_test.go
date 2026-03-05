@@ -84,7 +84,7 @@ func TestFactory_CreateLogsJSONConfig(t *testing.T) {
 	factory := NewFactory()
 	cfg := withDefaultConfig(func(cfg *Config) {
 		cfg.Endpoint = defaultEndpoint
-		cfg.UseJSON = true
+		cfg.JSON = true
 	})
 	params := exportertest.NewNopSettings(metadata.Type)
 	exporter, err := factory.CreateLogs(t.Context(), params, cfg)
@@ -98,7 +98,7 @@ func TestFactory_CreateTracesJSONConfig(t *testing.T) {
 	factory := NewFactory()
 	cfg := withDefaultConfig(func(cfg *Config) {
 		cfg.Endpoint = defaultEndpoint
-		cfg.UseJSON = true
+		cfg.JSON = true
 	})
 	params := exportertest.NewNopSettings(metadata.Type)
 	exporter, err := factory.CreateTraces(t.Context(), params, cfg)

@@ -67,11 +67,11 @@ type Config struct {
 	// Ignored if async inserts are configured in the `endpoint` or `connection_params`.
 	// Async inserts may still be overridden server-side.
 	AsyncInsert bool `mapstructure:"async_insert"`
-	// UseJSON enables the experimental JSON column type for attributes in logs and traces tables.
+	// JSON enables the experimental JSON column type for attributes in logs and traces tables.
 	// When false (default), Map columns are used. When true, JSON columns are used.
 	// ClickHouse v25+ is recommended for reliable JSON support.
 	// You may also need to add `enable_json_type=1` to your endpoint or connection_params.
-	UseJSON bool `mapstructure:"use_json"`
+	JSON bool `mapstructure:"json"`
 	// MetricsTables defines the table names for metric types.
 	MetricsTables MetricTablesConfig `mapstructure:"metrics_tables"`
 }

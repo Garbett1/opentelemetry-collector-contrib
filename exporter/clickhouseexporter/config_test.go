@@ -99,7 +99,7 @@ func TestLoadConfig(t *testing.T) {
 
 	jsonCfg := createDefaultConfig()
 	jsonCfg.(*Config).Endpoint = defaultEndpoint
-	jsonCfg.(*Config).UseJSON = true
+	jsonCfg.(*Config).JSON = true
 
 	tests = append(tests, struct {
 		id       component.ID

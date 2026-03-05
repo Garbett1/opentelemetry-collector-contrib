@@ -470,17 +470,18 @@ service:
 
 ## Experimental JSON support
 
-JSON column types can be enabled per-exporter using the `use_json` config option:
+JSON column types can be enabled per-exporter using the `json` config option:
 
 ```yaml
 exporters:
   clickhouse:
     endpoint: clickhouse://localhost:9000?enable_json_type=1
-    use_json: true
+    json: true
 ```
 
 Previously, the `clickhouse.json` feature gate was used to enable JSON for all
-ClickHouse exporter instances. The config option is preferred as it allows per-pipeline control.
+ClickHouse exporter instances. This feature gate is now deprecated. Use the `json`
+config option instead, which allows per-pipeline control.
 
 You may also need to add `enable_json_type=1` to your endpoint or `connection_params`.
 DDL has been updated, but feel free to tune the schema as needed.
